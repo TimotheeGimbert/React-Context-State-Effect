@@ -1,11 +1,7 @@
 import React from 'react';
 
 const CaseStudies = () => (
-  <div className='Work__CaseStudies'>
-    <div>
-      This is a list of case-studies
-    </div>
-  </div>
+  <p>This is a list of case-studies </p>
 );
 
 export default CaseStudies;
