@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Works from './pages/Works';
@@ -8,9 +8,14 @@ import ThemeContext from './contexts/ThemeContext';
 
 
 const App = () => {
+  const [darkTheme, setDarkTheme] = useState(false);
 
   return (
-    <ThemeContext.Provider value={ {themeIsDark: 'the default light mode'} }>
+    <ThemeContext.Provider value={{
+      darkTheme,
+      toggleTheme: () => setDarkTheme(darkTheme => !darkTheme)
+      }}>
+
       <Router>
         <Navbar />
         <Routes>
@@ -19,6 +24,7 @@ const App = () => {
           <Route path='/works/case-studies' element={ <CaseStudies /> } />
         </Routes>
       </Router>
+
     </ThemeContext.Provider>
   )
 }

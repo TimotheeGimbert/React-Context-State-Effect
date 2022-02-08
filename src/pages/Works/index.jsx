@@ -9,7 +9,8 @@ const Works = () => {
   return (
     <>
       <Link to='/works/case-studies/'>Case Studies {year}</Link> <br/>
-      <p>The current theme is : {theme.themeIsDark}</p>
+      <p>The current theme is dark ? {theme.darkTheme.toString()}</p>
+      <button onClick={theme.toggleTheme}>Changer le theme</button>
     </>
   )
 };
